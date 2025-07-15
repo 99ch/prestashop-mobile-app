@@ -1,0 +1,42 @@
+PODS:
+  - BCryptSwift (1.1)
+  - Flutter (1.0.0)
+  - flutter_bcrypt (0.0.1):
+    - BCryptSwift (~> 1.1)
+    - Flutter
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_bcrypt (from `.symlinks/plugins/flutter_bcrypt/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
+
+SPEC REPOS:
+  trunk:
+    - BCryptSwift
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_bcrypt:
+    :path: ".symlinks/plugins/flutter_bcrypt/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
+
+SPEC CHECKSUMS:
+  BCryptSwift: f69992ea5685f6714260842c2770688043b89ab2
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_bcrypt: 8ae63c682225f69d9981465509cb26b9e93522ef
+  image_picker_ios: b545a5f16c0fa88e3ecbbce3ed4de45567a8ec18
+  shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
+
+PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
+
+COCOAPODS: 1.16.2

@@ -1,0 +1,11 @@
+framework module BCryptSwift {
+  umbrella header "BCryptSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module BCryptSwift.Swift {
+  header "BCryptSwift-Swift.h"
+  requires objc
+}

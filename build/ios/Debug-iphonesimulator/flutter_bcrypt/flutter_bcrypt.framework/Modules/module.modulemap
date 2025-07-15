@@ -1,0 +1,11 @@
+framework module flutter_bcrypt {
+  umbrella header "flutter_bcrypt-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module flutter_bcrypt.Swift {
+  header "flutter_bcrypt-Swift.h"
+  requires objc
+}
