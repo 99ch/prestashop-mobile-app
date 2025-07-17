@@ -1,0 +1,138 @@
+{
+  "sample_products": [
+    {
+      "id": "1",
+      "name": "Wireless Bluetooth Headphones",
+      "description": "High-quality wireless headphones with noise cancellation and 30-hour battery life.",
+      "price": "89.99",
+      "reference": "WBH001",
+      "id_category_default": "1",
+      "quantity": "25",
+      "active": "1",
+      "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop",
+      "rating": "4.5",
+      "review_count": "128"
+    },
+    {
+      "id": "2",
+      "name": "Smart Watch Series 5",
+      "description": "Advanced smartwatch with health monitoring, GPS, and 2-day battery life.",
+      "price": "299.99",
+      "reference": "SW005",
+      "id_category_default": "1",
+      "quantity": "15",
+      "active": "1",
+      "image_url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop",
+      "rating": "4.7",
+      "review_count": "89"
+    },
+    {
+      "id": "3",
+      "name": "Organic Cotton T-Shirt",
+      "description": "Comfortable organic cotton t-shirt available in multiple colors and sizes.",
+      "price": "24.99",
+      "reference": "OCT001",
+      "id_category_default": "2",
+      "quantity": "50",
+      "active": "1",
+      "image_url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop",
+      "rating": "4.2",
+      "review_count": "67"
+    },
+    {
+      "id": "4",
+      "name": "Ceramic Coffee Mug Set",
+      "description": "Set of 4 elegant ceramic coffee mugs, perfect for morning coffee or tea.",
+      "price": "34.99",
+      "reference": "CCM004",
+      "id_category_default": "3",
+      "quantity": "30",
+      "active": "1",
+      "image_url": "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=500&h=500&fit=crop",
+      "rating": "4.8",
+      "review_count": "156"
+    },
+    {
+      "id": "5",
+      "name": "Fitness Yoga Mat",
+      "description": "Premium non-slip yoga mat with extra cushioning for comfortable workouts.",
+      "price": "45.99",
+      "reference": "FYM001",
+      "id_category_default": "4",
+      "quantity": "40",
+      "active": "1",
+      "image_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&h=500&fit=crop",
+      "rating": "4.6",
+      "review_count": "94"
+    }
+  ],
+  "sample_categories": [
+    {
+      "id": "1",
+      "name": "Electronics",
+      "description": "Latest gadgets and electronic devices",
+      "active": "1",
+      "position": "1",
+      "level_depth": "1"
+    },
+    {
+      "id": "2",
+      "name": "Fashion",
+      "description": "Clothing and accessories for all occasions",
+      "active": "1",
+      "position": "2",
+      "level_depth": "1"
+    },
+    {
+      "id": "3",
+      "name": "Home & Kitchen",
+      "description": "Everything for your home and kitchen needs",
+      "active": "1",
+      "position": "3",
+      "level_depth": "1"
+    },
+    {
+      "id": "4",
+      "name": "Sports & Fitness",
+      "description": "Sports equipment and fitness accessories",
+      "active": "1",
+      "position": "4",
+      "level_depth": "1"
+    }
+  ],
+  "sample_vendors": [
+    {
+      "id": "1",
+      "name": "TechHub Store",
+      "description": "Your one-stop shop for the latest technology and gadgets",
+      "email": "contact@techhub.com",
+      "phone": "+1-555-0123",
+      "active": "1",
+      "rating": "4.5",
+      "review_count": "324",
+      "logo": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=100&h=100&fit=crop"
+    },
+    {
+      "id": "2",
+      "name": "Fashion Forward",
+      "description": "Trendy fashion for the modern lifestyle",
+      "email": "hello@fashionforward.com",
+      "phone": "+1-555-0456",
+      "active": "1",
+      "rating": "4.3",
+      "review_count": "198",
+      "logo": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=100&h=100&fit=crop"
+    },
+    {
+      "id": "3",
+      "name": "Home Essentials",
+      "description": "Quality home goods and kitchen essentials",
+      "email": "support@homeessentials.com",
+      "phone": "+1-555-0789",
+      "active": "1",
+      "rating": "4.7",
+      "review_count": "267",
+      "logo": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=100&h=100&fit=crop"
+    }
+  ]
+}

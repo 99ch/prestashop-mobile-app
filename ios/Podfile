@@ -1,0 +1,36 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '12.0'  # <-- tu peux adapter ici si besoin
+
+# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+# Détection dynamique du chemin Flutter
+flutter_path = `readlink -f $(which flutter)`.strip
+flutter_root = File.expand_path(File.join(flutter_path, '..', '..'))
+require File.expand_path(File.join(flutter_root, 'packages', 'flutter_tools', 'bin', 'podhelper.rb'))
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+    # Tests iOS ici si besoin
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
+end
