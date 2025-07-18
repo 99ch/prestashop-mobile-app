@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:marketnest/models/customer_model.dart';
-import 'package:marketnest/services/auth_service.dart';
-import 'package:marketnest/services/api_service.dart';
+import 'package:koutonou/models/customer_model.dart';
+import 'package:koutonou/services/auth_service.dart';
+import 'package:koutonou/services/api_service.dart';
 
 class AuthProvider with ChangeNotifier {
   final AuthService _authService;

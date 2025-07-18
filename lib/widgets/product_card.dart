@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:marketnest/models/product_model.dart';
-import 'package:marketnest/views/products/product_detail_screen.dart';
+import 'package:koutonou/models/product_model.dart';
+import 'package:koutonou/views/products/product_detail_screen.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductModel product;

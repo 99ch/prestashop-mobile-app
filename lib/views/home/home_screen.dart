@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/providers/auth_provider.dart';
-import 'package:marketnest/providers/product_provider.dart';
-import 'package:marketnest/providers/cart_provider.dart';
-import 'package:marketnest/providers/vendor_provider.dart';
-import 'package:marketnest/views/home/widgets/app_header.dart';
-import 'package:marketnest/views/home/widgets/category_bar.dart';
-import 'package:marketnest/views/home/widgets/product_carousel.dart';
-import 'package:marketnest/views/home/widgets/vendor_highlights.dart';
-import 'package:marketnest/views/cart/cart_screen.dart';
-import 'package:marketnest/views/products/product_listing_screen.dart';
-import 'package:marketnest/views/profile/profile_screen.dart';
-import 'package:marketnest/views/vendors/vendor_listing_screen.dart';
+import 'package:koutonou/providers/auth_provider.dart';
+import 'package:koutonou/providers/product_provider.dart';
+import 'package:koutonou/providers/cart_provider.dart';
+import 'package:koutonou/providers/vendor_provider.dart';
+import 'package:koutonou/views/home/widgets/app_header.dart';
+import 'package:koutonou/views/home/widgets/category_bar.dart';
+import 'package:koutonou/views/home/widgets/product_carousel.dart';
+import 'package:koutonou/views/home/widgets/vendor_highlights.dart';
+import 'package:koutonou/views/cart/cart_screen.dart';
+import 'package:koutonou/views/products/product_listing_screen.dart';
+import 'package:koutonou/views/profile/profile_screen.dart';
+import 'package:koutonou/views/vendors/vendor_listing_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -127,13 +127,13 @@ class _HomeScreenState extends State<HomeScreen> {
               const CategoryBar(),
               const SizedBox(height: 24),
               ProductCarousel(
-                title: '✨ Featured Products',
+                title: 'Featured Products',
                 products: context.watch<ProductProvider>().featuredProducts,
                 isLoading: context.watch<ProductProvider>().isLoading,
               ),
               const SizedBox(height: 24),
               ProductCarousel(
-                title: '🔥 Best Sellers',
+                title: 'Best Sellers',
                 products: context.watch<ProductProvider>().bestSellers,
                 isLoading: context.watch<ProductProvider>().isLoading,
               ),

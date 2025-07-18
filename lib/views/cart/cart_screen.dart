@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/providers/cart_provider.dart';
-import 'package:marketnest/widgets/custom_button.dart';
-import 'package:marketnest/widgets/cart_item_widget.dart';
+import 'package:koutonou/providers/cart_provider.dart';
+import 'package:koutonou/widgets/custom_button.dart';
+import 'package:koutonou/widgets/cart_item_widget.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

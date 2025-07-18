@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/theme.dart';
-import 'package:marketnest/providers/auth_provider.dart';
-import 'package:marketnest/providers/product_provider.dart';
-import 'package:marketnest/providers/cart_provider.dart';
-import 'package:marketnest/providers/vendor_provider.dart';
-import 'package:marketnest/views/splash_screen.dart';
+import 'package:koutonou/theme.dart';
+import 'package:koutonou/providers/auth_provider.dart';
+import 'package:koutonou/providers/product_provider.dart';
+import 'package:koutonou/providers/cart_provider.dart';
+import 'package:koutonou/providers/vendor_provider.dart';
+import 'package:koutonou/views/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => VendorProvider()),
       ],
       child: MaterialApp(
-        title: 'MarketNest',
+        title: 'Koutonou',
         debugShowCheckedModeBanner: false,
         theme: lightTheme,
         darkTheme: darkTheme,

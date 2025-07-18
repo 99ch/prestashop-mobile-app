@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/providers/auth_provider.dart';
-import 'package:marketnest/views/auth/login_screen.dart';
-import 'package:marketnest/views/home/home_screen.dart';
+import 'package:koutonou/providers/auth_provider.dart';
+import 'package:koutonou/views/auth/login_screen.dart';
+import 'package:koutonou/views/home/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -110,15 +110,16 @@ class _SplashScreenState extends State<SplashScreen>
                             ),
                           ],
                         ),
-                        child: Icon(
-                          Icons.store,
-                          size: 60,
-                          color: Theme.of(context).colorScheme.primary,
+                        child: Image.asset(
+                          'assets/icon/app_icon.png',
+                          width: 60,
+                          height: 60,
+                          fit: BoxFit.cover,
                         ),
                       ),
                       const SizedBox(height: 32),
                       Text(
-                        'MarketNest',
+                        'Koutonou',
                         style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

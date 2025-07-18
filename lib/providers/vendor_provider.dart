@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:marketnest/models/vendor_model.dart';
-import 'package:marketnest/models/product_model.dart';
-import 'package:marketnest/services/api_service.dart';
+import 'package:koutonou/models/vendor_model.dart';
+import 'package:koutonou/models/product_model.dart';
+import 'package:koutonou/services/api_service.dart';
 
 class VendorProvider with ChangeNotifier {
   final ApiService _apiService = ApiService();

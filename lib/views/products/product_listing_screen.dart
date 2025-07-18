@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:marketnest/providers/product_provider.dart';
-import 'package:marketnest/widgets/product_card.dart';
+import 'package:koutonou/providers/product_provider.dart';
+import 'package:koutonou/widgets/product_card.dart';
 
 class ProductListingScreen extends StatefulWidget {
   const ProductListingScreen({super.key});
@@ -12,25 +12,41 @@ class ProductListingScreen extends StatefulWidget {
 }
 
 class _ProductListingScreenState extends State<ProductListingScreen> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void initState() {
     super.initState();
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<ProductProvider>().loadProducts();
+      final provider = context.read<ProductProvider>();
+      provider.loadProducts();
+
+      _scrollController.addListener(() {
+        if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 300) {
+          provider.loadMoreProducts();
+        }
+      });
     });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Products'),
+        title: const Text('Produits'),
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
           IconButton(
             onPressed: () {
-              // TODO: Implement filter
+              // TODO: Ajouter filtre
             },
             icon: const Icon(Icons.filter_list),
           ),
@@ -54,7 +70,7 @@ class _ProductListingScreenState extends State<ProductListingScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Error: ${productProvider.error}',
+                    'Erreur : ${productProvider.error}',
                     style: Theme.of(context).textTheme.bodyLarge,
                     textAlign: TextAlign.center,
                   ),
@@ -63,7 +79,7 @@ class _ProductListingScreenState extends State<ProductListingScreen> {
                     onPressed: () {
                       productProvider.loadProducts();
                     },
-                    child: const Text('Retry'),
+                    child: const Text('Réessayer'),
                   ),
                 ],
               ),
@@ -81,7 +97,7 @@ class _ProductListingScreenState extends State<ProductListingScreen> {
                     color: Colors.grey,
                   ),
                   SizedBox(height: 16),
-                  Text('No products found'),
+                  Text('Aucun produit trouvé'),
                 ],
               ),
             );
@@ -89,17 +105,29 @@ class _ProductListingScreenState extends State<ProductListingScreen> {
 
           return Padding(
             padding: const EdgeInsets.all(16),
-            child: MasonryGridView.builder(
-              gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-              ),
-              itemCount: productProvider.products.length,
-              mainAxisSpacing: 16,
-              crossAxisSpacing: 16,
-              itemBuilder: (context, index) {
-                final product = productProvider.products[index];
-                return ProductCard(product: product);
-              },
+            child: Column(
+              children: [
+                Expanded(
+                  child: MasonryGridView.builder(
+                    controller: _scrollController,
+                    gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemCount: productProvider.products.length,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 16,
+                    itemBuilder: (context, index) {
+                      final product = productProvider.products[index];
+                      return ProductCard(product: product);
+                    },
+                  ),
+                ),
+                if (productProvider.isLoadingMore)
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                    child: Center(child: CircularProgressIndicator()),
+                  ),
+              ],
             ),
           );
         },

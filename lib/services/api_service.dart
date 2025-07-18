@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:marketnest/models/customer_model.dart';
-import 'package:marketnest/models/product_model.dart';
-import 'package:marketnest/models/category_model.dart';
-import 'package:marketnest/models/cart_model.dart';
-import 'package:marketnest/models/order_model.dart';
-import 'package:marketnest/models/vendor_model.dart';
+import 'package:koutonou/models/customer_model.dart';
+import 'package:koutonou/models/product_model.dart';
+import 'package:koutonou/models/category_model.dart';
+import 'package:koutonou/models/cart_model.dart';
+import 'package:koutonou/models/order_model.dart';
+import 'package:koutonou/models/vendor_model.dart';
 
 class ApiService {
   static const String baseUrl = 'http://localhost:8080/prestashop/proxy.php';
@@ -65,21 +65,21 @@ class ApiService {
   }) async {
     try {
       final Map<String, dynamic> params = {
-        'limit': '\$offset,\$limit',
+        'limit': '$offset,$limit',
         'display': 'full',
       };
 
-      if (category != null) {
+      if (category != null && category.isNotEmpty) {
         params['filter[id_category_default]'] = category;
       }
 
-      if (search != null) {
-        params['filter[name]'] = '[\$search]%';
+      if (search != null && search.isNotEmpty) {
+        params['filter[name]'] = '[$search]%';
       }
 
       final response = await _dio.get('/products', queryParameters: params);
-      
-      if (response.data['products'] != null) {
+
+      if (response.data != null && response.data['products'] != null) {
         return (response.data['products'] as List)
             .map((json) => ProductModel.fromJson(json))
             .toList();
@@ -92,8 +92,15 @@ class ApiService {
 
   Future<ProductModel> getProduct(String id) async {
     try {
-      final response = await _dio.get('/products/\$id');
-      return ProductModel.fromJson(response.data['product']);
+      final response = await _dio.get('/products/$id', queryParameters: {
+        'display': 'full',
+      });
+
+      if (response.data != null && response.data['product'] != null) {
+        return ProductModel.fromJson(response.data['product']);
+      } else {
+        throw 'Produit introuvable';
+      }
     } on DioException catch (e) {
       throw _handleError(e);
     }
@@ -105,8 +112,8 @@ class ApiService {
       final response = await _dio.get('/categories', queryParameters: {
         'display': 'full',
       });
-      
-      if (response.data['categories'] != null) {
+
+      if (response.data != null && response.data['categories'] != null) {
         return (response.data['categories'] as List)
             .map((json) => CategoryModel.fromJson(json))
             .toList();
@@ -124,12 +131,11 @@ class ApiService {
         'filter[id_customer]': customerId,
         'display': 'full',
       });
-      
-      if (response.data['carts'] != null && response.data['carts'].isNotEmpty) {
+
+      if (response.data != null && response.data['carts'] != null && response.data['carts'].isNotEmpty) {
         return CartModel.fromJson(response.data['carts'][0]);
       }
-      
-      // Return empty cart if none exists
+
       return CartModel(
         id: '',
         customerId: customerId,
@@ -164,8 +170,8 @@ class ApiService {
         'filter[id_customer]': customerId,
         'display': 'full',
       });
-      
-      if (response.data['orders'] != null) {
+
+      if (response.data != null && response.data['orders'] != null) {
         return (response.data['orders'] as List)
             .map((json) => OrderModel.fromJson(json))
             .toList();
@@ -198,8 +204,8 @@ class ApiService {
         'display': 'full',
         'filter[active]': '1',
       });
-      
-      if (response.data['kbsellers'] != null) {
+
+      if (response.data != null && response.data['kbsellers'] != null) {
         return (response.data['kbsellers'] as List)
             .map((json) => VendorModel.fromJson(json))
             .toList();
@@ -212,8 +218,15 @@ class ApiService {
 
   Future<VendorModel> getVendor(String id) async {
     try {
-      final response = await _dio.get('/kbsellers/\$id');
-      return VendorModel.fromJson(response.data['kbseller']);
+      final response = await _dio.get('/kbsellers/$id', queryParameters: {
+        'display': 'full',
+      });
+
+      if (response.data != null && response.data['kbseller'] != null) {
+        return VendorModel.fromJson(response.data['kbseller']);
+      } else {
+        throw 'Vendeur introuvable';
+      }
     } on DioException catch (e) {
       throw _handleError(e);
     }
@@ -225,8 +238,8 @@ class ApiService {
         'filter[id_seller]': vendorId,
         'display': 'full',
       });
-      
-      if (response.data['kbsellerproducts'] != null) {
+
+      if (response.data != null && response.data['kbsellerproducts'] != null) {
         return (response.data['kbsellerproducts'] as List)
             .map((json) => ProductModel.fromJson(json))
             .toList();

@@ -1,4 +1,4 @@
-import 'package:marketnest/models/product_model.dart';
+import 'package:koutonou/models/product_model.dart';
 
 class CartItemModel {
   final String id;

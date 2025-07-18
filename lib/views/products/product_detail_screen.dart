@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:marketnest/models/product_model.dart';
-import 'package:marketnest/providers/cart_provider.dart';
-import 'package:marketnest/widgets/custom_button.dart';
+import 'package:koutonou/models/product_model.dart';
+import 'package:koutonou/providers/cart_provider.dart';
+import 'package:koutonou/widgets/custom_button.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   final ProductModel product;

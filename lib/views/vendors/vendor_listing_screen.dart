@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/providers/vendor_provider.dart';
-import 'package:marketnest/widgets/vendor_card.dart';
+import 'package:koutonou/providers/vendor_provider.dart';
+import 'package:koutonou/widgets/vendor_card.dart';
 
 class VendorListingScreen extends StatefulWidget {
   const VendorListingScreen({super.key});
