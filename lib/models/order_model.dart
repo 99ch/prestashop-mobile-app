@@ -1,5 +1,5 @@
-import 'package:marketnest/models/cart_model.dart';
-import 'package:marketnest/models/customer_model.dart';
+import 'package:koutonou/models/cart_model.dart';
+import 'package:koutonou/models/customer_model.dart';
 
 class OrderModel {
   final String id;

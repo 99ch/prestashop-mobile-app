@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/providers/auth_provider.dart';
-import 'package:marketnest/views/auth/signup_screen.dart';
-import 'package:marketnest/views/home/home_screen.dart';
-import 'package:marketnest/widgets/custom_text_field.dart';
-import 'package:marketnest/widgets/custom_button.dart';
+import 'package:koutonou/providers/auth_provider.dart';
+import 'package:koutonou/views/auth/signup_screen.dart';
+import 'package:koutonou/views/home/home_screen.dart';
+import 'package:koutonou/widgets/custom_text_field.dart';
+import 'package:koutonou/widgets/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -60,10 +60,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Theme.of(context).colorScheme.primaryContainer,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Icon(
-                      Icons.store,
-                      size: 50,
-                      color: Theme.of(context).colorScheme.primary,
+                    child: Image.asset(
+                      'assets/icon/app_icon.png',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -130,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           alignment: Alignment.centerRight,
                           child: TextButton(
                             onPressed: () {
-                              // TODO: Implement forgot password
+                              // TODO: Implement forgot password for future
                             },
                             child: const Text('Forgot Password?'),
                           ),

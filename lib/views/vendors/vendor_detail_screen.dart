@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:marketnest/models/vendor_model.dart';
-import 'package:marketnest/providers/vendor_provider.dart';
-import 'package:marketnest/widgets/product_card.dart';
+import 'package:koutonou/models/vendor_model.dart';
+import 'package:koutonou/providers/vendor_provider.dart';
+import 'package:koutonou/widgets/product_card.dart';
 
 class VendorDetailScreen extends StatefulWidget {
   final VendorModel vendor;

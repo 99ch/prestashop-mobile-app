@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:marketnest/models/customer_model.dart';
-import 'package:marketnest/services/api_service.dart';
+import 'package:koutonou/models/customer_model.dart';
+import 'package:koutonou/services/api_service.dart';
 
 class AuthService {
   static const String _customerKey = 'customer_data';

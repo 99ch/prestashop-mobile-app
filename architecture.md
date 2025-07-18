@@ -1,9 +1,11 @@
-# MarketNest - Multi-Vendor Marketplace Architecture
+# Koutonou - Multi-Vendor Marketplace Architecture
 
 ## Overview
-MarketNest is a complete multi-vendor marketplace application inspired by Amazon's UI, with Flutter frontend and PrestaShop backend integration through a custom PHP proxy.
+
+Koutonou is a complete multi-vendor marketplace application inspired by Amazon's UI, with Flutter frontend and PrestaShop backend integration through a custom PHP proxy.
 
 ## Architecture Pattern
+
 - **Clean Architecture**: Separation of concerns with distinct layers
 - **MVVM Pattern**: Model-View-ViewModel with Provider for state management
 - **Repository Pattern**: Data access abstraction through services
@@ -11,6 +13,7 @@ MarketNest is a complete multi-vendor marketplace application inspired by Amazon
 ## Project Structure
 
 ### Frontend (Flutter)
+
 ```
 lib/
 ├── models/              # Data models
@@ -58,6 +61,7 @@ lib/
 ```
 
 ### Backend (PHP Proxy)
+
 - **proxy.php**: Custom middleware for PrestaShop API
 - **API Endpoints**: Login, Signup, Products, Categories, Cart, Orders, Vendors
 - **Data Transformation**: JSON to XML conversion for PrestaShop compatibility
@@ -65,12 +69,14 @@ lib/
 ## Key Features
 
 ### Authentication
+
 - User registration and login
 - JWT-like session management
 - Password verification with bcrypt
 - Persistent authentication state
 
 ### Product Management
+
 - Product listing with pagination
 - Product search and filtering
 - Category-based browsing
@@ -78,24 +84,28 @@ lib/
 - Rating and review system
 
 ### Shopping Cart
+
 - Add/remove products
 - Quantity management
 - Local storage fallback
 - Cart persistence across sessions
 
 ### Multi-Vendor Support
+
 - Vendor listing and profiles
 - Vendor-specific product catalogs
 - Vendor ratings and reviews
 - Contact seller functionality
 
 ### Responsive Design
+
 - Mobile-first approach
 - Tablet and desktop support
 - Modern Material Design 3
 - Smooth animations and transitions
 
 ## State Management
+
 - **Provider Pattern**: Reactive state management
 - **Separation of Concerns**: UI, business logic, and data layers
 - **Error Handling**: Comprehensive error states and recovery
@@ -111,6 +121,7 @@ lib/
 6. **Response** flows back through the same chain
 
 ## Security Considerations
+
 - API key protection
 - Password hashing (handled by PrestaShop)
 - Input validation
@@ -118,6 +129,7 @@ lib/
 - Secure data transmission
 
 ## Performance Optimizations
+
 - Image caching with cached_network_image
 - Lazy loading for product lists
 - Efficient state management
@@ -125,18 +137,21 @@ lib/
 - Local cart storage
 
 ## Testing Strategy
+
 - Unit tests for models and services
 - Widget tests for UI components
 - Integration tests for complete flows
 - API endpoint testing
 
 ## Deployment
+
 - Flutter web/mobile deployment
 - PHP proxy server deployment
 - PrestaShop backend configuration
 - Database setup and migration
 
 ## Future Enhancements
+
 - Push notifications
 - Real-time chat with vendors
 - Advanced filtering and sorting

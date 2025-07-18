@@ -1,11 +1,13 @@
-# MarketNest Backend - PrestaShop API Proxy
+# Koutonou Backend - PrestaShop API Proxy
 
 ## Overview
+
 This PHP proxy serves as a middleware between the Flutter frontend and PrestaShop backend, handling JSON to XML conversion and authentication.
 
 ## Setup
 
 ### Prerequisites
+
 - PHP 7.4 or higher
 - PrestaShop 8.x installation
 - Web server (Apache/Nginx)
@@ -15,12 +17,14 @@ This PHP proxy serves as a middleware between the Flutter frontend and PrestaSho
 
 1. **Place the proxy.php file** in your web server directory
 2. **Configure PrestaShop Web Service**:
+
    - Go to Advanced Parameters > Webservice
    - Enable Web Service
    - Generate an API key
    - Set permissions for resources
 
 3. **Environment Variables**:
+
    ```bash
    export PRESTASHOP_API_KEY="your_api_key_here"
    ```
@@ -32,10 +36,12 @@ This PHP proxy serves as a middleware between the Flutter frontend and PrestaSho
 ## API Endpoints
 
 ### Authentication
+
 - `POST /login` - User login
 - `POST /signup` - User registration
 
 ### Products
+
 - `GET /products` - List products
 - `GET /products/{id}` - Get product details
 - `POST /products` - Create product (admin)
@@ -43,21 +49,25 @@ This PHP proxy serves as a middleware between the Flutter frontend and PrestaSho
 - `DELETE /products/{id}` - Delete product (admin)
 
 ### Categories
+
 - `GET /categories` - List categories
 - `GET /categories/{id}` - Get category details
 
 ### Cart
+
 - `GET /carts` - Get cart
 - `POST /carts` - Add to cart
 - `PUT /carts/{id}` - Update cart
 - `DELETE /carts/{id}` - Remove from cart
 
 ### Orders
+
 - `GET /orders` - List orders
 - `POST /orders` - Create order
 - `GET /orders/{id}` - Get order details
 
 ### Vendors (Multi-vendor support)
+
 - `GET /kbsellers` - List vendors
 - `GET /kbsellers/{id}` - Get vendor details
 - `GET /kbsellerproducts` - List vendor products
@@ -65,6 +75,7 @@ This PHP proxy serves as a middleware between the Flutter frontend and PrestaSho
 ## Request/Response Format
 
 ### Login Request
+
 ```json
 {
   "email": "user@example.com",
@@ -73,6 +84,7 @@ This PHP proxy serves as a middleware between the Flutter frontend and PrestaSho
 ```
 
 ### Login Response
+
 ```json
 {
   "success": true,
@@ -87,6 +99,7 @@ This PHP proxy serves as a middleware between the Flutter frontend and PrestaSho
 ```
 
 ### Signup Request
+
 ```json
 {
   "customer": {
@@ -110,6 +123,7 @@ The proxy returns standardized error responses:
 ```
 
 Common HTTP status codes:
+
 - 200: Success
 - 400: Bad Request
 - 401: Unauthorized

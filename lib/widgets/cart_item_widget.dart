@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:marketnest/models/cart_model.dart';
+import 'package:koutonou/models/cart_model.dart';
 
 class CartItemWidget extends StatelessWidget {
   final CartItemModel item;

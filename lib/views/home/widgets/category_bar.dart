@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/providers/product_provider.dart';
-import 'package:marketnest/views/products/product_listing_screen.dart';
+import 'package:koutonou/providers/product_provider.dart';
+import 'package:koutonou/views/products/product_listing_screen.dart';
 
 class CategoryBar extends StatelessWidget {
   const CategoryBar({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/providers/auth_provider.dart';
-import 'package:marketnest/widgets/custom_text_field.dart';
-import 'package:marketnest/widgets/custom_button.dart';
+import 'package:koutonou/providers/auth_provider.dart';
+import 'package:koutonou/widgets/custom_text_field.dart';
+import 'package:koutonou/widgets/custom_button.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -84,7 +84,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   const SizedBox(height: 32),
                   Text(
-                    'Join MarketNest',
+                    'Join Koutonou',
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.onSurface,

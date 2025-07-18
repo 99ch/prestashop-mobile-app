@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:marketnest/providers/auth_provider.dart';
-import 'package:marketnest/providers/cart_provider.dart';
-import 'package:marketnest/providers/product_provider.dart';
-import 'package:marketnest/views/products/product_listing_screen.dart';
-import 'package:marketnest/views/cart/cart_screen.dart';
+import 'package:koutonou/providers/auth_provider.dart';
+import 'package:koutonou/providers/cart_provider.dart';
+import 'package:koutonou/providers/product_provider.dart';
+import 'package:koutonou/views/products/product_listing_screen.dart';
+import 'package:koutonou/views/cart/cart_screen.dart';
 
 class AppHeader extends StatefulWidget {
   const AppHeader({super.key});
@@ -60,30 +60,31 @@ class _AppHeaderState extends State<AppHeader> {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
+                    // color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Icon(
-                    Icons.store,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                    size: 24,
+                  child: Image.asset(
+                    'assets/icon/app_icon.png',
+                    width: 24,
+                    height: 24,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 const SizedBox(width: 12),
-                // Greeting
+                //Greeting ${authProvider.currentCustomer?.firstName ?? 'Guest'}
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hello, ${authProvider.currentCustomer?.firstName ?? 'Guest'}',
+                        '',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           fontWeight: FontWeight.w600,
                           color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
                       Text(
-                        'Welcome to MarketNest',
+                        '',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                         ),

@@ -1,8 +1,8 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import 'package:marketnest/models/cart_model.dart';
-import 'package:marketnest/models/product_model.dart';
-import 'package:marketnest/services/api_service.dart';
+import 'package:koutonou/models/cart_model.dart';
+import 'package:koutonou/models/product_model.dart';
+import 'package:koutonou/services/api_service.dart';
 
 class CartService {
   static const String _cartKey = 'local_cart';

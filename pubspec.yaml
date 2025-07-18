@@ -1,5 +1,5 @@
-name: marketnest
-description: "A complete multi-vendor marketplace application inspired by Amazon's UI, powered by PrestaShop backend through a custom PHP proxy."
+name: koutonou
+description: "A complete multi-vendor marketplace , powered by PrestaShop backend through a custom PHP proxy."
 publish_to: "none"
 version: 1.0.0
 
@@ -23,8 +23,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
+    - assets/icon/app_icon.png
