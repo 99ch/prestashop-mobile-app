@@ -2,7 +2,7 @@
 
 ## Overview
 
-Koutonou is a complete multi-vendor marketplace application inspired by Amazon's UI, with Flutter frontend and PrestaShop backend integration through a custom PHP proxy.
+Koutonou is a complete multi-vendor marketplace application , with Flutter frontend and PrestaShop backend integration through a custom PHP proxy.
 
 ## Architecture Pattern
 
